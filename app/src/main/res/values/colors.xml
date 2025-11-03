@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="app_pink_primary">#ED747E</color>
+    <color name="app_pink_light">#FCE5E7</color>
+    <color name="app_text_dark">#33375B</color>
+    <color name="app_splash_gray_bg">#F5F5F5</color>
+    <!-- Warna biru untuk link "Login Aja" -->
+    <color name="app_link_blue">#3897F0</color>
+
+    <!-- Color untuk Home -->
+    <color name="app_card_welcome_bg">#FEF7E5</color>
+    <color name="app_search_bar_bg">#F5F5F5</color>
+    <color name="app_promo_banner_bg">#8CC6A5</color>
+    <color name="app_category_seblak_bg">#FDE6AA</color>
+    <color name="app_category_basreng_bg">#F9C8B5</color>
+    <color name="app_category_matcha_bg">#C5E5C6</color>
+    <color name="app_category_martabak_bg">#AC7F5E</color>
+    <color name="app_category_makaroni_bg">#C182F2</color>
+
+    <!-- Color untuk Product -->
+    <color name="app_detail_pink_bg">#FCE5E7</color>
+    <color name="app_detail_tag_bg">#FFFFFF</color>
+
+    <!-- Color untuk Cart -->
+    <color name="app_stepper_inactive_bg">#FCE5E7</color>
+    <color name="app_stepper_inactive_text">#ED747E</color>
+
+    <!-- Color untuk Profile -->
+    <color name="app_profile_header_bg">#FFFBF1</color>
+    <color name="app_profile_payment_btn">#DAC8B4</color>
+    <color name="app_profile_edit_btn">#EDC8C5</color>
+    <color name="app_profile_saldo_border">#EAEAEA</color>
+    <color name="app_profile_info_card_bg">#8CC6A5</color>
+    <color name="app_profile_logout_btn">#33375B</color>
+    <color name="app_profile_info_line">#FFFFFF</color>
+</resources>

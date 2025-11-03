@@ -1,0 +1,119 @@
+<resources>
+    <string name="app_name">Hayang Jajan</string>
+
+    <string name="splash_title">Hayang Jajan</string>
+    <string name="splash_subtitle">Lapar tapi mager? Hayang Jajan atuh solusinya</string>
+    <string name="splash_button">Gasskeun</string>
+
+    <string name="login_title">Hayu Atuh Login</string>
+    <string name="login_hint_user">Enter Your Username or Email</string>
+    <string name="login_hint_pass">Enter Your Password</string>
+    <string name="login_button">Log In</string>
+    <string name="login_signup_prompt">Belum punya akun? Bikin dulu euy</string>
+
+    <string name="login_via">Atau login via</string>
+    <string name="signup_button">Sign Up</string>
+
+    <string name="signup_title">Bikin Akun Dulu Nya</string>
+
+    <string name="home_welcome">Wilujeng Sumping!</string>
+    <string name="home_menu_alus">Menu Alus</string>
+    <string name="home_menu_rame">Menu Paling Rame</string>
+
+    <string name="cart_title">Cart Urang</string>
+    <string name="address_title">Alamat Maneh</string>
+    <string name="payment_title">Gass Checkout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="signup_hint_user">Enter Your Username</string>
+    <string name="signup_hint_email">Enter Your Email</string>
+    <string name="signup_hint_phone">Enter Your Phone Number</string>
+    <string name="signup_hint_pass">Enter Your Password</string>
+    <string name="signup_hint_repass">Re-enter Your Password</string>
+
+    <!-- String untuk prompt login di halaman Sign Up -->
+    <string name="signup_login_prompt_1">Udah punya akun?</string>
+    <string name="signup_login_prompt_2">Login Aja</string>
+
+    <string name="facebook_logo_desc">Logo login Facebook</string>
+    <string name="google_logo_desc">Logo login Google</string>
+
+    <!-- String untuk Home -->
+    <string name="home_welcome_subtitle">Gimana kabarmu? Sok atuh pesen</string>
+    <string name="home_search_hint">Search…</string>
+    <string name="home_promo_title">Donut Gratis!</string>
+    <string name="home_promo_subtitle">Untuk Beli 3 Gratis 1!</string>
+    <string name="todo">TODO</string>
+
+    <!-- String untuk Product -->
+    <string name="detail_tambah_rasa">Nambah Rasa Teu 😉</string>
+    <string name="detail_beli_berapa">Beli Berapa?</string>
+    <string name="detail_masukin_keranjang">Masukin Keranjang</string>
+    <string name="detail_add_to_cart">Add to Cart</string>
+    <string name="detail_close_button_desc">Tutup halaman detail</string>
+    <string name="detail_add_quantity">Tambah jumlah</string>
+    <string name="detail_remove_quantity">Kurangi jumlah</string>
+    <string name="detail_initial_quantity">1</string>
+    <string name="detail_product_image_desc">Gambar produk</string>
+
+    <!-- String untuk Cart -->
+    <string name="cart_pesanan">Pesanan</string>
+    <string name="cart_clear_all">Clear all</string>
+    <string name="cart_lanjut_beli">Lanjut Beli</string>
+    <string name="cart_stepper_my_order">My Order</string>
+    <string name="cart_stepper_address">Address</string>
+    <string name="cart_stepper_payment">Payment</string>
+    <string name="cart_close_button_desc">Tutup keranjang</string>
+
+    <!-- String untuk Address -->
+    <string name="address_form_title">Mau Dianterin Kemana?</string>
+    <string name="address_hint_jalan">Jalan/Nomor Rumah</string>
+    <string name="address_hint_rt_rw">RT/RW</string>
+    <string name="address_hint_kelurahan">Kelurahan</string>
+    <string name="address_hint_kecamatan">Kecamatan</string>
+    <string name="address_hint_kota">Kota/Kabupaten</string>
+    <string name="address_hint_kode_pos">Kode Pos</string>
+    <string name="address_button_kirim">Alamatnya Udah? Kirim</string>
+    <string name="address_close_button_desc">Tutup halaman alamat</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+
+    <!-- String untuk Payment -->
+    <string name="payment_subtitle">Pembayaran Pake?</string>
+    <string name="payment_bayar_button">Uang Ready? Gas Bayar</string>
+    <string name="payment_close_button_desc">Tutup halaman pembayaran</string>
+    <string name="payment_desc_qris">Logo QRIS</string>
+    <string name="payment_desc_bank">Logo Bank Transfer</string>
+    <string name="payment_desc_cod">Logo Cash on Delivery</string>
+    <string name="payment_desc_dana">Logo DANA</string>
+
+    <!-- Profile Page Strings -->
+    <string name="profile_my_payment">My Payments</string>
+    <string name="profile_edit_profil">Edit Profile</string>
+    <string name="profile_saldo_tersisa">Saldo Tersisa</string>
+    <string name="profile_informasi_abdi">Informasi Abdi</string>
+    <string name="profile_alamat_default">Alamat Default</string>
+    <string name="profile_no_handphone">No Handphone</string>
+    <string name="profile_alamat_email">Alamat Email</string>
+    <string name="profile_log_out">Log Out</string>
+
+    <!-- Profile Page - Data Dummy untuk Tampilan -->
+    <string name="profile_dummy_name">Subaru Hoshina</string>
+    <string name="profile_dummy_bio">The most magnificent glows are not meant to endure, only to be remembered.</string>
+    <string name="profile_dummy_saldo">Rp 150.000</string>
+    <string name="profile_dummy_voucher">7 Voucher Tersisa</string>
+    <string name="profile_dummy_alamat">Jl. Grove Street no 67…</string>
+    <string name="profile_dummy_phone">+62 897 1344 3676</string>
+    <string name="profile_dummy_email">subaruchan@gmail.com</string>
+
+    <!-- Profile Page - String untuk Aksi (Toast & Deskripsi) -->
+    <string name="profile_desc_notif">Notifikasi</string>
+    <string name="profile_desc_arrow">Ubah</string>
+    <string name="profile_toast_edit_profil">Anda Mengubah Profile</string>
+    <string name="profile_toast_edit_alamat">Anda Mengubah Alamat</string>
+    <string name="profile_toast_edit_phone">Anda Mengubah No Handphone</string>
+    <string name="profile_toast_edit_email">Anda Mengubah Alamat Email</string>
+    <string name="splash_screen_background_character">Splash screen background character</string>
+</resources>

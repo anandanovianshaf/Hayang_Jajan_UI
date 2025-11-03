@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CartFragment">
+
+    <!--
+      REVISI 1: Tombol 'X' sekarang di pojok kanan atas
+    -->
+    <ImageButton
+        android:id="@+id/btn_close_cart"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_close"
+        android:background="@drawable/bg_stepper_circle_inactive"
+        app:tint="@color/app_stepper_inactive_text"
+        android:contentDescription="@string/cart_close_button_desc"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--
+      REVISI 1: Judul "Cart Urang" sekarang di tengah
+      dan di bawah tombol 'X' agar tidak tumpang tindih.
+    -->
+    <TextView
+        android:id="@+id/tv_cart_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/cart_title"
+        android:fontFamily="@font/komikax_family"
+        android:textColor="@color/app_text_dark"
+        android:textSize="32sp"
+        app:layout_constraintTop_toBottomOf="@id/btn_close_cart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Stepper (Constraint-nya ke 'tv_cart_title' sudah benar) -->
+    <LinearLayout
+        android:id="@+id/ll_stepper"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/tv_cart_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Step 1: My Order -->
+        <TextView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:text="@string/one"
+            android:gravity="center"
+            android:background="@drawable/bg_stepper_circle_active"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montheavydemo_family"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/cart_stepper_my_order"
+            android:textColor="@color/app_pink_primary"
+            android:fontFamily="@font/montheavydemo_family"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_weight="1"
+            android:background="@color/app_stepper_inactive_bg"
+            android:layout_marginHorizontal="8dp"/>
+
+        <!-- Step 2: Address -->
+        <TextView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:text="@string/two"
+            android:gravity="center"
+            android:background="@drawable/bg_stepper_circle_inactive"
+            android:textColor="@color/app_stepper_inactive_text"
+            android:fontFamily="@font/montheavydemo_family"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_weight="1"
+            android:background="@color/app_stepper_inactive_bg"
+            android:layout_marginHorizontal="8dp"/>
+
+        <!-- Step 3: Payment -->
+        <TextView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:text="@string/three"
+            android:gravity="center"
+            android:background="@drawable/bg_stepper_circle_inactive"
+            android:textColor="@color/app_stepper_inactive_text"
+            android:fontFamily="@font/montheavydemo_family"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Sub-header "Pesanan" (Tidak ada perubahan) -->
+    <TextView
+        android:id="@+id/tv_pesanan_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/cart_pesanan"
+        android:fontFamily="@font/nasi_goreng_family"
+        android:textColor="@color/app_text_dark"
+        android:textSize="28sp"
+        app:layout_constraintTop_toBottomOf="@id/ll_stepper"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_clear_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/cart_clear_all"
+        android:fontFamily="@font/montheavydemo_family"
+        android:textColor="@color/app_pink_primary"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_pesanan_title"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Daftar Item Keranjang (Tidak ada perubahan) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_cart_items"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="8dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/tv_pesanan_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/card_bottom_checkout"
+        tools:listitem="@layout/item_cart"
+        tools:itemCount="4" />
+
+    <!-- Footer Tombol Checkout (Tidak ada perubahan) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_bottom_checkout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="16dp"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_lanjut_beli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="16dp"
+            android:text="@string/cart_lanjut_beli"
+            tools:text="Lanjut Beli   Rp 160.000"
+            android:textSize="18sp"
+            android:fontFamily="@font/montheavydemo_family"
+            android:backgroundTint="@color/app_pink_primary"
+            app:cornerRadius="16dp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

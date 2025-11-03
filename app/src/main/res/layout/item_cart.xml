@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Gambar Makanan -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_cart_item"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.App.CircleImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:src="@drawable/ic_food_placeholder" />
+
+        <!-- Nama & Harga -->
+        <TextView
+            android:id="@+id/tv_cart_item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            tools:text="Martabak"
+            android:fontFamily="@font/montheavydemo_family"
+            android:textStyle="bold"
+            android:textColor="@color/app_text_dark"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/img_cart_item"
+            app:layout_constraintEnd_toStartOf="@id/ll_cart_quantity"
+            app:layout_constraintTop_toTopOf="@id/img_cart_item" />
+
+        <TextView
+            android:id="@+id/tv_cart_item_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Rp 66.000"
+            android:fontFamily="@font/roboto_bold_italic_family"
+            android:textColor="@color/app_text_dark"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tv_cart_item_name"
+            app:layout_constraintEnd_toEndOf="@id/tv_cart_item_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_cart_item_name" />
+
+        <!-- Kontrol Kuantitas -->
+        <LinearLayout
+            android:id="@+id/ll_cart_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_cart_remove"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_remove"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/detail_remove_quantity" />
+
+            <TextView
+                android:id="@+id/tv_cart_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="3"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/app_text_dark"
+                android:layout_marginHorizontal="8dp"
+                android:fontFamily="@font/montheavydemo_family"/>
+
+            <ImageButton
+                android:id="@+id/btn_cart_add"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_add"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/detail_add_quantity" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

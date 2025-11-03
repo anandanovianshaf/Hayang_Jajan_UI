@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DetailProdukFragment">
+
+    <!-- BAGIAN 1: BACKGROUND PINK ATAS -->
+    <View
+        android:id="@+id/view_pink_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/app_detail_pink_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.4" />
+
+    <!--
+      PERBAIKAN 1:
+      ImageView ('img_product') dipindahkan ke sini,
+      agar digambar DI BELAKANG tombol dan teks.
+    -->
+    <ImageView
+        android:id="@+id/img_product"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_marginEnd="-20dp"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/martabak"
+        app:layout_constraintBottom_toBottomOf="@id/view_pink_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_close"
+        tools:ignore="ImageContrastCheck,VisualLintBounds" />
+
+    <!--
+      PERBAIKAN 2:
+      Tombol Close (X) ditambahkan 'android:elevation'
+    -->
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ic_profile_placeholder"
+        android:contentDescription="@string/detail_close_button_desc"
+        android:src="@drawable/ic_close"
+        android:elevation="2dp"
+        app:backgroundTint="@color/app_pink_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white"
+        tools:ignore="ImageContrastCheck" />
+
+    <!--
+      PERBAIKAN 2:
+      Teks Judul ditambahkan 'android:elevation'
+    -->
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Martabak"
+        android:fontFamily="@font/nasi_goreng_family"
+        android:textColor="@color/app_text_dark"
+        android:textSize="32sp"
+        android:elevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_close"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--
+      PERBAIKAN 2:
+      Kartu Tag ditambahkan 'android:elevation'
+    -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/app_detail_tag_bg"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="0dp"
+        app:contentPadding="12dp"
+        android:elevation="2dp"
+        app:layout_constraintTop_toBottomOf="@id/tv_product_name"
+        app:layout_constraintStart_toStartOf="@id/tv_product_name">
+
+        <TextView
+            android:id="@+id/tv_product_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Coklat Kacang"
+            android:fontFamily="@font/momo_family"
+            android:textColor="@color/app_text_dark"
+            android:textStyle="bold"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- BAGIAN 2: KONTEN PUTIH (BISA SCROLL) -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/view_pink_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/card_bottom_cart">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_add_on_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_tambah_rasa"
+                android:fontFamily="@font/montheavydemo_family"
+                android:textColor="@color/app_text_dark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="24dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_add_ons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:clipToPadding="false"
+                android:paddingHorizontal="16dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_add_on"
+                tools:itemCount="3"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- BAGIAN 3: TOMBOL CART (MENEMPEL DI BAWAH) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_bottom_cart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="16dp"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- Label Beli Berapa? -->
+            <TextView
+                android:id="@+id/tv_quantity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail_beli_berapa"
+                android:fontFamily="@font/roboto_bold_family"
+                android:textSize="14sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Kontrol Kuantitas -->
+            <LinearLayout
+                android:id="@+id/ll_quantity_control"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toBottomOf="@id/tv_quantity_label"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageButton
+                    android:id="@+id/btn_remove_quantity"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/detail_remove_quantity"
+                    android:src="@drawable/ic_remove"
+                    tools:ignore="ImageContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_initial_quantity"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/app_text_dark"
+                    android:layout_marginHorizontal="16dp"
+                    android:fontFamily="@font/montheavydemo_family"/>
+
+                <ImageButton
+                    android:id="@+id/btn_add_quantity"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/detail_add_quantity"
+                    android:src="@drawable/ic_add"
+                    tools:ignore="ImageContrastCheck" />
+            </LinearLayout>
+
+            <!-- Tombol Add to Cart -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_add_to_cart"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/app_pink_primary"
+                android:fontFamily="@font/montheavydemo_family"
+                android:text="@string/detail_add_to_cart"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="16dp"
+                app:layout_constraintBottom_toBottomOf="@id/ll_quantity_control"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/ll_quantity_control"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Add to Cart\nRp 66.000"
+                tools:ignore="VisualLintButtonSize" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
